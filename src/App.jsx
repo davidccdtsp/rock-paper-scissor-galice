@@ -35,13 +35,19 @@ function App() {
 
 // debugger;
   if (choice != '' && isPlayed) {
-    setResult(getResult());
+    // Creo que se ejecuta el setCount antes de que se actualice el valor de result, y por eso en los if puede estar haciendo cosas raras.
+    // Puedes volver a probar?
+    // Hay un chat integrado en liveShar
+    // Funciona!!!
+    
+    let r = getResult();
+    setResult(r);
 
-    if(result == 'win'){
+    if(r == 'win'){
       setCount(count + 1);
     }
     
-    if(result == 'lose'){
+    if(r == 'lose'){
       setCount(count - 1);
     }
 
